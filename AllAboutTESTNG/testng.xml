@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department">
+  <test thread-count="5" name="PersonalLoan">
+    <classes>
+<!--	<class name="Section16FW1TestNG.Test3TestNGBasics"></class>   Run only personal class Tests-->
+
+<!-- Now don't run Homeloan Tab test case
+      <class name="Section16FW1TestNG.Test2TestNGBasics">
+      		<methods> <exclude name="testClassHomeTabLoan">
+      		</exclude>
+      		</methods>
+      </class>  
+      --> 
+      
+ <!-- Now only run mobile related all loans test cases 
+      <class name="Section16FW1TestNG.TestTestNGBasics">
+      	<methods> <include name="testClassCarMobileLoan"></include></methods>
+      </class>
+      <class name="Section16FW1TestNG.Test2TestNGBasics">
+      	<methods> <include name="testClassHomeMobileLoan"></include></methods>
+      </class>
+      <class name="Section16FW1TestNG.Test3TestNGBasics">
+      	<methods> <include name="testClassPersonalMobileLoan"></include></methods>
+      </class>
+    -->    
+    
+<!-- Now only include Mobile and Web test cases for Home loan
+<class name="Section16FW1TestNG.Test2TestNGBasics">
+<methods> <exclude name="testClassHomeTabLoan"></exclude></methods>
+</class>
+ -->
+ 
+<!-- Now run all test from all classes except mobile related Test Cases
+<class name="Section16FW1TestNG.TestTestNGBasics">
+    <methods> <exclude name="Mobile.*"></exclude>
+    </methods>
+</class>
+<class name="Section16FW1TestNG.Test2TestNGBasics"></class>
+<methods> <exclude name="Mobile.*"></exclude>
+    </methods>
+<class name="Section16FW1TestNG.Test3TestNGBasics"></class>
+<methods> <exclude name="Mobile.*"></exclude>
+    </methods>
+-->
+
+
+    </classes>
+  </test> 
+</suite>
+

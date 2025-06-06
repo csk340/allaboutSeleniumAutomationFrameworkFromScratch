@@ -1,0 +1,31 @@
+package section16FW1TestNGParameterizing;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+
+
+public class Class1 {
+
+	@Parameters ({"URL"})
+	@Test 
+	public void abc(String A)
+	{
+		System.out.println("ABC");
+	    System.out.println(A);
+	}
+	
+	@Parameters ({"KEY"})
+	@Test
+	public void xyz(String b)
+	{
+		System.out.println("XYZ");
+	}
+	
+	@Test
+	public void pqr()
+	{
+		System.out.println("PQR");
+	}
+	
+}

@@ -1,0 +1,14 @@
+package section14JavaStreams;
+
+public class Assignment116Lecture {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		/*
+		 * Take Array -> (3,2,2,7,5,1,9,7);
+		 * WAPTP unique number from this array
+		 */
+	}
+
+}

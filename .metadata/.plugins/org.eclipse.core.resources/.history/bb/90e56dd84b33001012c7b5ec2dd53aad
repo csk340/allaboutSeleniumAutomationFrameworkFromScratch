@@ -1,0 +1,11 @@
+package RahulShettyAcademy.Tests;
+
+import RahulShettyAcademy.TestComponents.BaseTests;
+
+public class ErrorValidationCheck extends BaseTests {
+
+	public void SubmitOrder()
+	{
+		
+	}
+}

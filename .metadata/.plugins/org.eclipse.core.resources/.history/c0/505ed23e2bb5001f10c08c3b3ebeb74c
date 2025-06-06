@@ -1,0 +1,46 @@
+package section5locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Locators {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+		driver.findElement(By.id("inputUsername")).sendKeys("chinmayk340@gmail.com");
+		driver.findElement(By.name("inputPassword")).sendKeys("353464t");
+		driver.findElement(By.xpath("(//input[@type=\"checkbox\"])[1]")).click();
+		driver.findElement(By.cssSelector("input#chkboxTwo")).click();
+		driver.findElement(By.cssSelector("button.submit.signInBtn")).click();
+		Thread.sleep(5000);
+		System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
+		Thread.sleep(5000);
+		driver.findElement(By.linkText("Forgot your password?")).click();
+		driver.findElement(By.cssSelector("button[class=\"reset-pwd-btn\"]")).click();
+		String GreenMessage = driver.findElement(By.cssSelector(".infoMsg")).getText();
+		System.out.println(GreenMessage);
+		
+		
+
+	}
+
+}
+
+
+/*
+ * URL:- https://rahulshettyacademy.com/locatorspractice/
+ * WAPT login flow 
+ * Try different types of locators here
+ * Enter email ,  wrong pass , select all check box
+ * print error msg
+ * go to forgot your password
+ * keep blank and click on reset
+ * green msg print  -> and set password same from green msg (not hard coding it)
+ * and clcik on sign in
+ * and print success msg for logged in
+ * 
+ */
+
+

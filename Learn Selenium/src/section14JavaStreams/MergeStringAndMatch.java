@@ -1,0 +1,42 @@
+package section14JavaStreams;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+import org.testng.Assert;
+
+import com.google.common.collect.Streams;
+
+public class MergeStringAndMatch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<String> string1 = new ArrayList<String>();
+		string1.add("Chinmay");
+		string1.add("Siddheshware");
+		string1.add("Raju");
+		string1.add("Akash");
+		string1.add("Vaidehi");
+		string1.add("Vikas");
+		
+		ArrayList<String> string2 = new ArrayList<String>();
+		string2.add("Henric");
+		string2.add("Robert");
+		string2.add("Mark");
+		string2.add("Captain");
+		string2.add("Johnson");
+		string2.add("Scarlet");
+		
+	
+		Stream<String> newStream = Stream.concat(string1.stream(), string2.stream());
+		//newStream.sorted().map(s->s.toUpperCase()).forEach(s->System.out.println(s));
+		System.out.println("---------------------------------------------------------");
+		//newStream.forEach(s->System.out.println(s));
+		
+		//Match 
+		boolean returna = newStream.anyMatch(s->s.equalsIgnoreCase("henric")); //match return boolean value
+		System.out.println(returna);
+		Assert.assertTrue(returna);
+	}
+
+}

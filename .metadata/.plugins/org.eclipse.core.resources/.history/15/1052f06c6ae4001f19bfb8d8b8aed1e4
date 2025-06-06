@@ -1,0 +1,68 @@
+package section8CartForProductOrder;
+
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AddProductsToCartUsingMethodAndWaitMechanism {
+
+	public static void main(String[] args)  {
+		// TODO Auto-generated method stub
+
+		
+		String[] ItemsNeeded = {"Cauliflower", "Cucumber","Apple", "Almonds" };
+		WebDriver driver = new ChromeDriver();
+		WebDriverWait waitobj = new WebDriverWait();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+		AddProductsToCartUsingMethodAndWaitMechanism obj = new AddProductsToCartUsingMethodAndWaitMechanism();
+		obj.AddItemsToCart(driver, ItemsNeeded);
+	}
+	
+	public void AddItemsToCart(WebDriver driver,String[] ItemsNeeded ) 
+	{
+		int j=0;
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		List <WebElement> Items = driver.findElements(By.cssSelector("h4.product-name"));
+		
+		
+		for (int i=0;i<Items.size();i++)
+		{
+			String[] SinglItem = Items.get(i).getText().split("-");
+			String Product = SinglItem[0].trim();
+			List AytoAyList = Arrays.asList(ItemsNeeded);
+			if (AytoAyList.contains(Product))
+			{
+				driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();//get(i) with find elements too imp
+				j++;//If we don't want to run code again after respective items gets added to cart
+				if (j==4)
+				{
+					break;
+				}
+			}
+			
+		}
+		
+		driver.findElement(By.cssSelector(".cart-icon")).click();
+	    driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+	    WebDriverWait waitobj = new WebDriverWait(driver, 5);
+	    driver.findElement(By.cssSelector(".promoCode")).sendKeys("rahulshettyacademy");
+	    driver.findElement(By.cssSelector(".promoBtn")).click();
+	    System.out.println(driver.findElement(By.cssSelector(".promoInfo")).getText());
+	    
+	    
+	}
+
+}
+/*
+ *    Syntax for Explicit wait 
+ *    WebDriverWait WaitObj = new WebDriverWait(driver, n);
+ *    
+ 
+*/

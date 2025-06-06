@@ -1,0 +1,30 @@
+package section8CartForProductOrder;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AddProductsToCart {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		Thread.sleep(4000);
+		List<WebElement> list = driver.findElements(By.cssSelector("h4.product-name"));
+	    for (int i=0;i<list.size();i++)
+	    {
+	    	String text = list.get(i).getText();
+		System.out.println(text);
+	    	if (text.equalsIgnoreCase("Cucumber - 1 Kg"))
+	    	{
+	    		list.get(i).findElement(By.cssSelector("button[type='button']")).click();
+	    	}
+	    }
+
+	}
+
+}

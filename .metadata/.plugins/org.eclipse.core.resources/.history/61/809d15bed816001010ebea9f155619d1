@@ -1,0 +1,62 @@
+package RahulShettyAcademy;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import RahulShettyAcademy.AbstractComponents.AbstractComponent;
+import RahulShettyAcademy.PageObjectModelAndFactory.CartPage;
+import RahulShettyAcademy.PageObjectModelAndFactory.LandingPage;
+import RahulShettyAcademy.PageObjectModelAndFactory.ProductCatelog;
+
+
+public class StandAloneTest 
+{
+	
+
+	public static void main (String[] args) throws InterruptedException
+	{
+		String PName = "ZARA COAT 3";
+		String EmailID = "CSK567@gmail.com";
+		String pwd = "Chinmay@234";
+		String countryinit = "indi";
+		WebDriver driver = new ChromeDriver();
+		
+		LandingPage LPobj = new LandingPage(driver);
+		LPobj.GoTo();
+		ProductCatelog PCobj  = LPobj.Action(EmailID, pwd);
+		//So after login we sure that next page is product catelog only and hence here we are encapsulating object creation of product catelog inside end of previous action
+		
+		List<WebElement> List = PCobj.GetProductList();
+		PCobj.GetProductByName(PName);
+		PCobj.AddProductToCart(PName);
+		CartPage CPobj = PCobj.CartSelection();
+		
+		//Same for here to encapsulating object creation gor CartPage inside the end of previous action
+		
+		Boolean match = CPobj.CartCheckForSelectedItem(PName);
+		Assert.assertTrue(match);
+		CPobj.checkout();
+		CPobj.fillCheckoutDetails(countryinit);
+		String a= CPobj.PlaceOrder();
+	    Assert.assertEquals(a, "THANKYOU FOR THE ORDER.");
+	    Thread.sleep(2000);
+        driver.close();
+		
+    
+      
+
+	
+	
+	}
+    }
+

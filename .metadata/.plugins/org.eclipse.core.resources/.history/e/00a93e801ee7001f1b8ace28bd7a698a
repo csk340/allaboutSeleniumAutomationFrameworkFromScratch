@@ -1,0 +1,10 @@
+package section10ActionWindowHandleAndFrames;
+
+public class DifferentActions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

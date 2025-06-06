@@ -1,0 +1,32 @@
+package section5locators;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Locators {
+
+	public static void main(String[] args) {
+	
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+		
+
+	}
+
+}
+
+
+/*
+ * URL:- https://rahulshettyacademy.com/locatorspractice/
+ * WAPT login flow 
+ * Try different types of locators here
+ * Enter email ,  wrong pass , select all check box
+ * print error msg
+ * go to forgot your password
+ * keep blank and click on reset
+ * green msg print  -> and set password same from green msg (not hard coding it)
+ * and clcik on sign in
+ * and print success msg for logged in
+ * 
+ */
+
+

@@ -1,0 +1,22 @@
+package section12JSExecutorScroll;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.idealized.Javascript;
+
+public class ScrollWithinWebPageAndTable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/#");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,700)");
+		js.executeScript("document.querySelector('.tableFixHead').scrollBy(0,1000)");
+		driver.findElements(By.xpath("//div[@class='tableFixHead']/table/tbody/tr/td[4]"));
+	}
+
+}

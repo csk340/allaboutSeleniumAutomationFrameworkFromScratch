@@ -1,0 +1,35 @@
+package section15Selenium4NewFeatues;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class InvokingMultipleWindowsOrTabs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		driver.switchTo().newWindow(WindowType.TAB);
+		Set <String> Windows = driver.getWindowHandles();
+		Iterator <String> a = Windows.iterator();
+		String Window1 = a.next();
+		String Window2 = a.next();
+		driver.switchTo().window(Window2);
+		driver.get("https://rahulshettyacademy.com/");
+		String b = driver.findElement(By.linkText("All-Access Membership-Complete Access to 25+ Courses (and counting!)")).getText();
+	    driver.switchTo().window(Window1);
+	
+	
+	
+	
+	
+	
+	}
+
+}

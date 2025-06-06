@@ -1,0 +1,85 @@
+package RahulShettyAcademy.Tests;
+
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import RahulShettyAcademy.AbstractComponents.AbstractComponent;
+import RahulShettyAcademy.PageObjectModelAndFactory.CartPage;
+import RahulShettyAcademy.PageObjectModelAndFactory.LandingPage;
+import RahulShettyAcademy.PageObjectModelAndFactory.OrderPage;
+import RahulShettyAcademy.PageObjectModelAndFactory.ProductCatelog;
+import RahulShettyAcademy.TestComponents.BaseTests;
+
+
+public class StandAloneTest extends BaseTests
+{
+	String PName="ZARA COAT 3";
+
+	@Test(dataProvider="getData",groups="Purchase")
+	public void StandAloneSubmitOrder(String EmailID, String pwd, String PName) throws IOException, InterruptedException
+	{
+		
+		String countryinit = "indi";
+		
+		ProductCatelog PCobj  = LPObj.Action(EmailID, pwd);
+		//So after login we sure that next page is product catelog only and hence here we are encapsulating object creation of product catelog inside end of previous action
+		
+		List<WebElement> List = PCobj.GetProductList();
+		PCobj.GetProductByName(PName);
+		PCobj.AddProductToCart(PName);
+		CartPage CPobj = PCobj.CartSelection();
+		
+		//Same for here to encapsulating object creation gor CartPage inside the end of previous action
+		//In technincal term:- Driver object creation within page object classes encapsulating it from tests
+		
+		Boolean match = CPobj.CartCheckForSelectedItem(PName);
+		Assert.assertTrue(match);
+		CPobj.checkout();
+		CPobj.fillCheckoutDetails(countryinit);
+		String a= CPobj.PlaceOrder();
+	    Assert.assertEquals(a, "THANKYOU FOR THE ORDER.");
+
+	}
+
+	
+	@Test (dependsOnMethods={"StandAloneSubmitOrder"})
+	public void OrderHistory( ) 
+	{
+		ProductCatelog PCobj  = LPObj.Action("CSK567@gmail.com", "Chinmay@234");
+		OrderPage obj = PCobj.OrdersPage();
+		Assert.assertTrue(obj.CheckOrderHistory("ZARA COAT 3"));
+	}
+	@DataProvider
+	public Object[][] getData()
+	{
+		Object[][] abc = new Object[2][3];
+		//rows: Combinations
+		//columns: number of values for each combination
+		abc[0][0] = "CSK567@gmail.com";
+		abc[0][1] = "Chinmay@234";
+		abc[0][2] = "ZARA COAT 3";
+		
+		abc[1][0] = "johnson@gmail.com ";
+		abc[1][1] = "Chinmay@234";
+		abc[1][2] = "IPHONE 13 PRO";
+		
+		return abc;
+		
+				
+	}
+
+	
+    }
+

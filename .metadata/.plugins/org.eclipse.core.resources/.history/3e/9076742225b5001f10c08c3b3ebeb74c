@@ -1,0 +1,19 @@
+package section5locators;
+
+public class Locators {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+/*
+ * WAPT login flow 
+ * Try different types of locators here
+ * 
+ */
+
+

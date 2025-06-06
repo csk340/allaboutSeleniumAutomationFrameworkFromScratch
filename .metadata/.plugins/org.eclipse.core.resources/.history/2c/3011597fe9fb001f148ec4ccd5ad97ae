@@ -1,0 +1,29 @@
+package PageObjectModel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+
+public class LandingPage {
+
+	WebDriver driver;
+	public LandingPage(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+	      this.driver = driver;
+	      /*
+	       * driver.findElement(By.cssSelector("#userEmail")).sendKeys("CSK567@gmail.com");
+		driver.findElement(By.xpath("//input[@placeholder=\"enter your passsword\"]")).sendKeys("Chinmay@234");
+		driver.findElement(By.id("login")).click();
+	       */
+	}
+	
+	@FindBy (css="#userEmail")
+	WebDriver email;
+	
+	@FindBy (xpath="//input[@placeholder='enter your passsword']")
+	WebDriver password;
+	
+	@FindBy (id="login")
+	WebDriver login;
+
+}

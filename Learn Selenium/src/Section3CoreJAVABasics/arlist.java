@@ -1,0 +1,58 @@
+package Section3CoreJAVABasics;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class arlist {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<String> a = new ArrayList<String>();
+		a.add("Chinmay");
+		a.add("Kulkarni");
+		a.add("My daughter name is");
+		a.add("Mahi");
+		a.add("Kulkarni");
+		a.add("Vaidehi");
+		a.add("Kulkarni");
+		
+		System.out.println(a);
+		
+		a.remove(2);
+		
+		System.out.println(a);
+		//Extract the values from array
+		
+		System.out.println(a.get(1));
+		
+		//use loop to print value from arraylist
+		
+		System.out.println("Using for loop arraylist contains below items :- ");
+		
+		for (String newarr : a)
+		{
+			System.out.println(newarr);
+		}
+		
+		//to check if any item is present in arraylist or not?
+		System.out.println(a.get(3).isEmpty());
+		System.out.println(a);
+		
+		System.out.println(a.contains("Mhb"));
+		
+		//How to convert array to array list
+		String[] ArrayString = {"Chinmay","Shrikant","Kulkarni"};
+		List <String> newlist = Arrays.asList(ArrayString);
+		
+		System.out.println("********************************************************");
+		System.out.println(newlist.contains("Shrikant"));
+		System.out.println(newlist.contains("Mahi"));
+ 
+		
+		
+
+	}
+
+}

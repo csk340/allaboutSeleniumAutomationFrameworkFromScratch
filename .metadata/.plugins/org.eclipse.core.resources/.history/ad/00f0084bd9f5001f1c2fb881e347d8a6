@@ -1,0 +1,10 @@
+package section17JAVNeededForFramework;
+
+public class InheritanceInTestNG {
+
+	
+	public void testParent()
+	{
+		System.out.println("I am from parent class");
+	}
+}

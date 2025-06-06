@@ -1,0 +1,38 @@
+package Section3CoreJAVABasics;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class breakstring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String s1 = "Rahul Shetty Academy";
+		String s2 = "Rahul Shetty Academy";
+		
+		//For storing above values there is only one time memory allocation happens as values are same
+		
+		String s3 = new String("Rahul Shetty Academy");
+		String s4 = new String("Rahul Shetty Academy");
+		
+		//For storing s3 and s4 two times memory allocation happened even values are same because of new keyword
+		
+		//WAP to split given array from space
+		String s5 = "Rahul Shetty Academy";
+		String[] a = s5.split("Shetty");
+		List<String> b = Arrays.asList(a);
+		for (String c:b)
+		{
+			System.out.println(c.trim());
+		}
+		
+		//WAP to print all characters of string seperately
+		
+		for (String d:b)
+		{
+			System.out.println(d.charAt(i));
+		}
+	}
+
+}

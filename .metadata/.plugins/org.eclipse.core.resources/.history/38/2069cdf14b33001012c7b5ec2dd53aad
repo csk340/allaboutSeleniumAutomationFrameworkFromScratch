@@ -1,0 +1,15 @@
+package RahulShettyAcademy.Tests;
+
+import org.testng.annotations.Test;
+
+import RahulShettyAcademy.PageObjectModelAndFactory.ProductCatelog;
+import RahulShettyAcademy.TestComponents.BaseTests;
+
+public class ErrorValidationCheck extends BaseTests {
+
+	@Test
+	public void SubmitOrder()
+	{
+		ProductCatelog PCobj  = LPObj.Action(EmailID, pwd);
+	}
+}

@@ -1,0 +1,35 @@
+package PageObjectModel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LandingPage {
+
+	WebDriver driver;
+	public LandingPage(WebDriver driver) {
+		
+	      this.driver = driver;
+	      PageFactory.initElements(driver, this);
+	      /*
+	       * driver.findElement(By.cssSelector("#userEmail")).sendKeys("CSK567@gmail.com");
+		driver.findElement(By.xpath("//input[@placeholder=\"enter your passsword\"]")).sendKeys("Chinmay@234");
+		driver.findElement(By.id("login")).click();
+	       */
+	}
+	
+	@FindBy (css="#userEmail")
+	WebDriver email;
+	
+	@FindBy (xpath="//input[@placeholder='enter your passsword']")
+	WebDriver password;
+	
+	@FindBy (id="login")
+	WebDriver login;
+
+	public void goto()
+	{
+		
+	}
+}

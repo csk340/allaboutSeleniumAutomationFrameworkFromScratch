@@ -1,0 +1,13 @@
+package section17JAVNeededForFramework;
+
+import org.testng.annotations.Test;
+
+public class InheritanceInTestNG1 extends InheritanceInTestNG{
+
+	@Test
+	public void Child()
+	{
+		System.out.println("I am from Child Class");
+		TestParent();
+	}
+}

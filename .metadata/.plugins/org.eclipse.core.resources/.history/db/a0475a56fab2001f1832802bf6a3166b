@@ -1,0 +1,31 @@
+package Section3CoreJAVABasics;
+
+import java.util.ArrayList;
+
+public class Arrays {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		/*
+		 *     int[] array = {1,4,3,1,4}  // method 1
+		 *     int[] array  = new int [n] // method 2
+		 */
+		
+		
+		String[] ArrayString = new 	String [3];
+		ArrayString[0] = "Chinmay";
+		ArrayString[1] = "Shrikant";
+		ArrayString[2] = "Kulkarni";
+	
+		
+		for (int i=0;i<ArrayString.length;i++)
+		{
+		     System.out.println(ArrayString[i]);
+		}
+		
+		
+		
+	}
+
+}

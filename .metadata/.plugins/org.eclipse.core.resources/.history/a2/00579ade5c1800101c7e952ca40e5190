@@ -1,0 +1,50 @@
+package RahulShettyAcademy.TestComponents;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import RahulShettyAcademy.PageObjectModelAndFactory.LandingPage;
+
+public class BaseTests {
+
+	 WebDriver driver;
+	public WebDriver initializeDriver() throws IOException
+	{
+		
+		Properties propobj = new Properties();
+		FileInputStream FISobj = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\RahulShettyAcademy\\Resources\\GlobalData.properties");
+		propobj.load(FISobj);
+		String BrowserName = propobj.getProperty("browser");
+		
+		if (BrowserName.equalsIgnoreCase("chrome"))
+		{
+		
+		 driver = new ChromeDriver();
+		
+		
+		//But now to execute in any browser we need to set global property file 
+		}
+		else if (BrowserName.equalsIgnoreCase("FireFox"))
+		{
+			//Firefox related code
+		}
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.manage().window().maximize();
+		return driver;
+		
+	
+		}
+	
+	public LandingPage LaunchApplication() throws IOException
+	{
+		driver = initializeDriver();
+		LandingPage LPobj = new LandingPage(driver);
+		LPobj.GoTo();
+		return LPobj;
+	}
+}

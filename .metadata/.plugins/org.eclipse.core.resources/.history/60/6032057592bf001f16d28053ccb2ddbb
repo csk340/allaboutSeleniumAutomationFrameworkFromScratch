@@ -1,0 +1,31 @@
+package section7DropdownandCalender;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AutoSuggestiveDropdown {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		WebElement Auto = driver.findElement(By.id("autosuggest"));
+		Auto.sendKeys("in");
+		Thread.sleep(5000);
+		List<WebElement> AllElements = Auto.findElements(By.xpath("//ul[@id='ui-id-1'] //li[@class='ui-menu-item']"));
+		for (int i=0; i<AllElements.size();i++)
+		{
+			
+			WebElement ind = AllElements.get(i).findElement(By.linkText("India"));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4000));
+		}
+		
+	}
+
+}

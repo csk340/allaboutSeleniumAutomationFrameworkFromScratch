@@ -1,0 +1,46 @@
+package section8CartForProductOrder;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Assignment3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Use only difficult locators for each webelement
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/loginpagePractise/");
+		driver.findElement(By.cssSelector("#username")).click();
+		driver.findElement(By.cssSelector("#username")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.xpath("(//input[@class='form-control'])[2]")).click();
+		driver.findElement(By.xpath("(//input[@class='form-control'])[2]")).sendKeys("learning");
+		driver.findElement(By.xpath("//label[2]")).click();
+		driver.switchTo().alert().accept();
+		Select drp = new Select(driver.findElement(By.xpath("//div/select")));
+		drp.selectByIndex(2);
+		driver.findElement(By.xpath("//div/label/span/input")).click();
+		driver.findElement(By.cssSelector(".btn.btn-info.btn-md")).click();	
+		WebDriverWait waitobj = new WebDriverWait(driver, Duration.ofSeconds(6));
+		waitobj.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".btn.btn-info")));
+		List <WebElement> AllProducts = driver.findElements(By.cssSelector(".btn.btn-info"));
+		for (int i=0;i<AllProducts.size();i++)
+		{
+			AllProducts.get(i).click();
+		}
+		driver.findElement(By.cssSelector(".nav-link.btn.btn-primary")).click();
+		waitobj.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".btn.btn-success")));
+		driver.findElement(By.cssSelector(".btn.btn-success")).click();
+		waitobj.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@value='Purchase']")));
+		
+	}
+
+}

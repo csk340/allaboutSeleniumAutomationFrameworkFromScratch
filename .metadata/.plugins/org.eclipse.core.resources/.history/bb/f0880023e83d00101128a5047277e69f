@@ -1,0 +1,13 @@
+package TestAuotmationProjectForPractice.TestProjectSwagLabs;
+
+import org.junit.Test;
+
+public class EndToEndFlow {
+	
+	@Test
+	public void PurchaseProduct()
+	{
+		
+	}
+
+}

@@ -1,0 +1,27 @@
+package section8CartForProductOrder;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Assignment3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Use only difficult locators for each webelement
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/loginpagePractise/");
+		driver.findElement(By.cssSelector("#username")).click();
+		driver.findElement(By.cssSelector("#username")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.xpath("(//input[@class='form-control'])[2]")).click();
+		driver.findElement(By.xpath("(//input[@class='form-control'])[2]")).sendKeys("learning");
+		driver.findElement(By.xpath("//label[2]")).click();
+		driver.switchTo().alert().accept();
+		Select drp = new Select(driver.findElement(By.xpath("//div/select")));
+		drp.selectByIndex(2);
+		
+	}
+
+}

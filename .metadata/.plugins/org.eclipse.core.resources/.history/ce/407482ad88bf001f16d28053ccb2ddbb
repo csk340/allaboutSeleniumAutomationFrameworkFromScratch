@@ -1,0 +1,30 @@
+package section7DropdownandCalender;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class DynamicDrodpwn {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+	    driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+	    Thread.sleep(3000);
+	    driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+	    driver.findElement(By.xpath("//a[@value='MAA']")).click();
+	    Thread.sleep(3000);
+	    WebElement destStation = driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXTaction"));
+	    //destStation.findElement(By.xpath("(//a[@value='IXG'])[2]")).click();
+	    //Without using index value find IXG for 2nd field
+	    //.right1 select option[value='IXG']
+	    destStation.findElement(By.xpath("//div[@class='right1'] //option[@value='IXJ']")).click();
+	    
+	    
+	}
+
+}

@@ -1,0 +1,23 @@
+package section10ActionWindowHandleAndFrames;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DifferentActions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.flipkart.com/");
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+		//driver.findElement(By.cssSelector("._30XB9F")).click();
+		Actions move = new Actions(driver);
+	    move.moveToElement(driver.findElement(By.xpath("//img[@alt='Home & Furniture']")));
+	}
+
+}

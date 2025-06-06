@@ -1,0 +1,5 @@
+package RahulShettyAcademy.Tests;
+
+public class ErrorValidationCheck extends BaseTest {
+
+}

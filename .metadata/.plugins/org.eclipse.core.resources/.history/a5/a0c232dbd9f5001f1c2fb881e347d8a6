@@ -1,0 +1,13 @@
+package section17JAVNeededForFramework;
+
+import org.testng.annotations.Test;
+
+public class InheritanceInTestNG {
+
+	
+	@Test
+	public void testParent()
+	{
+		System.out.println("I am from parent class");
+	}
+}

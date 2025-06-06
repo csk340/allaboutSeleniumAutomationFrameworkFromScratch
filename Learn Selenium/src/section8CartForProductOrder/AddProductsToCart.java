@@ -1,0 +1,34 @@
+package section8CartForProductOrder;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AddProductsToCart {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		String[] ExpectedItems = {"Cucumber", "Musk Melon", "Raspberry", "Cashews" };
+		Thread.sleep(4000);
+		List<WebElement> list = driver.findElements(By.cssSelector("h4.product-name"));
+	    for (int i=0;i<list.size();i++)
+	    {
+	    	String text = list.get(i).getText();
+			System.out.println(text);
+	    	if (text.contains("Cucumber"))
+	    	{
+	    		driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
+	    		//My step: I am just limiting the scope to that particular element using list.get(i)
+	    		//but actually as we are declaring inside bracket and in which there is only cucumber related thing(here e.g.)
+	    		//so we can directly give driver instead of limiting scope
+	    	}
+	    }
+
+	}
+
+}

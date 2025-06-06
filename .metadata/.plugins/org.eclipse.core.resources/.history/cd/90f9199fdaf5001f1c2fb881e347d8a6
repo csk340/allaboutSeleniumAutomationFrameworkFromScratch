@@ -1,0 +1,27 @@
+package section17JAVNeededForFramework;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class InheritanceInTestNG {
+
+	
+	@Test
+	public void TestParent()
+	{
+		System.out.println("I am from parent class");
+	}
+	
+	@BeforeTest
+	public void preRequsites()
+	{
+		System.out.println("I am from pre-Requisites");
+	}
+	
+	@AfterTest
+	public void postRequsites()
+	{
+		System.out.println("I am from pre-Requisites");
+	}
+}

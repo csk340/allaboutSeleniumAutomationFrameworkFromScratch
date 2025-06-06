@@ -1,0 +1,11 @@
+package TestAuotmationProjectForPractice.TestProjectSwagLabs;
+
+public class EndToEndFlow {
+	
+	@Test
+	public void PurchaseProduct()
+	{
+		
+	}
+
+}
