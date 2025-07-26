@@ -17813,3 +17813,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration LogJSErrosFromSl re
 2025-06-30 17:03:42,875 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\Arjun\All@Selenium\AllFilesRSA-Directory\Section33DBconnectiontoSL\src\main\resources
 2025-06-30 17:03:42,948 [Worker-26: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2025-06-30 17:03:42,948 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\Arjun\All@Selenium\AllFilesRSA-Directory\Section33DBconnectiontoSL\src\test\resources
+2025-07-26 11:56:38,232 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
