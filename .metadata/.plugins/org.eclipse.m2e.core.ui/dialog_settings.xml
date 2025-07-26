@@ -27,6 +27,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\Arjun\All@Selenium\AllFilesRSA-Directory"/>
+			<item value="E:\Arjun\All@Selenium\AllFilesRSA-Directory\TestProjectSwagLabs"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -50,26 +52,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="TestAuotmationProjectForPractice.TestProjectSwagLabs"/>
-			<item value="RahulShettyAcademy.ExtentReports"/>
-			<item value="RahulShettyAcademy"/>
-			<item value="SeleniumFramworkDesign.RahulShettyAcademyFramwork"/>
-			<item value="RahulShettyAcademyFramwork.AllAboutSeleniumFrameworkDesign"/>
-			<item value="AllAboutSeleniumFrameworkDesign.RSA"/>
+			<item value="Section32.CDPIntegrationConcepts"/>
 		</list>
 		<list key="groupId">
-			<item value="TestAuotmationProjectForPractice"/>
-			<item value="RahulShettyAcademy"/>
-			<item value="SeleniumFramworkDesign"/>
-			<item value="RahulShettyAcademyFramwork"/>
-			<item value="AllAboutSeleniumFrameworkDesign"/>
+			<item value="Section32"/>
 		</list>
 		<list key="artifactId">
-			<item value="TestProjectSwagLabs"/>
-			<item value="ExtentReports"/>
-			<item value="SeleniumFramworkDesign"/>
-			<item value="RahulShettyAcademyFramwork"/>
-			<item value="AllAboutSeleniumFrameworkDesign"/>
+			<item value="CDPIntegrationConcepts"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

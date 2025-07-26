@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="dev.failsafe.internal.util.Assert"/>
     <fullyQualifiedTypeName name="java.time.Duration"/>
     <fullyQualifiedTypeName name="org.testng.Assert"/>
     <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.OutputType"/>
     <fullyQualifiedTypeName name="com.sun.net.httpserver.Authenticator.Retry"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="com.aventstack.extentreports.reporter.ExtentReporter"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v137.emulation.Emulation"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v137.network.Network"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.devtools.v137.network.model.ConnectionType"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.net.URI"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.UsernameAndPassword"/>
+    <fullyQualifiedTypeName name="section32CDPIntegrationInSelenium.BasicAuthenticationUsinguriPredicate"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.logging.LogType"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
 </qualifiedTypeNameHistroy>
